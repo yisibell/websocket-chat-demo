@@ -44,6 +44,7 @@ document.addEventListener("keyup" , function(e){
 // 插入聊天池
 function insert (msg , pos){
   var li = document.createElement("li")
+  msg = pos == "right" ? "我：<br/>" + msg : "小红：<br/>" + msg;
   li.innerHTML = msg;
   li.className = pos;
 

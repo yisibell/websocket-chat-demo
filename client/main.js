@@ -44,18 +44,18 @@ document.addEventListener("keyup" , function(e){
 // 插入聊天池
 function insert (msg , pos){
   var li = document.createElement("li")
-  msg = pos == "right" ? "我：<br/>" + msg : "小红：<br/>" + msg;
-  li.innerHTML = msg;
+  var text = pos == "right" ? "我：<br/>" + msg : "小红：<br/>" + msg;
+  li.innerHTML = text;
   li.className = pos;
 
   var isa = msg.indexOf("http://") !== -1 ? true : false; 
 
-  if ( isa ) {
+  if ( isa && pos == "left" ) {
     let a = document.createElement("a");
     a.href = msg;
     a.textContent = "点我啊";
     a.target = "_blank";
-    li.innerHTML = "找到了相关地址：";
+    li.innerHTML = "小红说：<br />找到了相关地址呢，";
     li.appendChild(a);
   }
 

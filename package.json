@@ -1,0 +1,16 @@
+{
+  "name": "websocket-chat-demo",
+  "version": "1.0.0",
+  "description": "a chat demo based on WebSocket + tuling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

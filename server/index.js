@@ -50,9 +50,19 @@
       data
     })
     .then( res => {
-      var result = res.data.results[0].values.text;
-      console.log( result );
-      callback && callback(result)
+      var result = res.data.results[0];
+      var type = result.resultType;
+      var con = result.values;
+      var data = "";
+
+      console.log( type );
+
+      if ( type == "text" )
+      data = con.text;
+      else if ( type == "url" )
+      data = con.url;
+
+      callback && callback(data)
     })
     .catch( err => {
       console.log( err );

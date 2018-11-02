@@ -46,6 +46,18 @@ function insert (msg , pos){
   var li = document.createElement("li")
   li.innerHTML = msg;
   li.className = pos;
+
+  var isa = msg.indexOf("http://") !== -1 ? true : false; 
+
+  if ( isa ) {
+    let a = document.createElement("a");
+    a.href = msg;
+    a.textContent = "点我啊";
+    a.target = "_blank";
+    li.innerHTML = "找到了相关地址：";
+    li.appendChild(a);
+  }
+
   list.appendChild(li)
 
   var li_top = li.offsetTop;
